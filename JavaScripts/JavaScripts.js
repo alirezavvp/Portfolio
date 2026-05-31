@@ -1,3 +1,4 @@
+// هنگام اسکرول کردن منوی اصلی تغییر ظاهر میدهد
 window.addEventListener("scroll", function () {
   const header = document.getElementById("main-header");
   if (window.scrollY > 50) {
@@ -7,6 +8,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// باز کردن منو در موبایل و قفل شدن اسکرول و تاریک شدن
 document
   .querySelector("#toggle-menu > svg")
   .addEventListener("click", function () {
@@ -15,6 +17,7 @@ document
     document.body.classList.add("no-scroll");
   });
 
+// بستن منو در موبایل
 document
   .querySelector("#close-menu > svg")
   .addEventListener("click", function () {
@@ -23,6 +26,7 @@ document
     document.body.classList.remove("no-scroll");
   });
 
+// هنگام اسکرول کردن محتوا به شکل مخصوصی ظاهر میشود
 const elements = document.querySelectorAll(".reveal");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

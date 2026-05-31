@@ -70,10 +70,12 @@ header {
   grid-template-columns: 0fr;
   text-wrap: nowrap;
   font-family: dana-medium;
+  margin: 30px auto 0;
   position: sticky;
+  width: 75%;
   top: 0;
   z-index: 1000;
-  animation: slide-left 2s ease-out forwards;
+  animation: slide-left 1.2s ease-out forwards;
 }
 
 @keyframes slide-left {
@@ -86,8 +88,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  box-shadow: 0px 0px 10px #090c0873;
+  height: 80px;
+  box-shadow: 0px 5px 10px #090c0836;
+  border-radius: 20px;
   background-color: #f5f5f5;
   transition: all ease 0.3s;
   > ul {
@@ -104,15 +107,20 @@ nav.scrolled {
   background: rgba(245, 245, 245, 0.3);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(15px);
-
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  > #logo {
+  > #logo,
+  ul {
     opacity: 0.5;
   }
+}
+
+nav.scrolled > ul:hover {
+  opacity: 1;
 }
 
 #logo {
@@ -185,7 +193,7 @@ nav.scrolled {
 .hero-first-view {
   opacity: 0;
   transform: translateX(60px);
-  animation: fade-up 0.5s 2s ease-out forwards;
+  animation: fade-up 0.5s 1.5s ease-out forwards;
 }
 
 @keyframes fade-up {
@@ -213,8 +221,7 @@ nav.scrolled {
 .reveal {
   opacity: 0;
   transform: translatey(100px);
-  transition: all 0.5s linear;
-  transition-delay: 1.5s;
+  transition: all 0.5s 0.7s linear;
 }
 
 .reveal.scroll {
@@ -250,6 +257,10 @@ RESPONSIVE
 
 */
 @media (max-width: 1024px) {
+  header {
+    width: 90%;
+  }
+
   nav > ul {
     display: flex;
     gap: 16.5px;
@@ -261,12 +272,18 @@ RESPONSIVE
 }
 
 @media (max-width: 768px) {
+  header {
+    margin-top: 0;
+    width: 100%;
+  }
+
   nav > ul:first-child {
     display: none;
   }
 
   nav {
     height: 60px;
+    border-radius: 0;
   }
 
   nav.scrolled {
@@ -329,6 +346,7 @@ RESPONSIVE
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
