@@ -89,7 +89,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  box-shadow: 0px 5px 5px #266ed32f;
+  box-shadow: 0px 5px 15px #00000027;
   border-radius: 20px;
   background-color: #f5f5f5;
   transition: all ease 0.3s;
@@ -192,8 +192,10 @@ nav.scrolled > ul:hover {
 
 #main-content-background {
   background-color: white;
-  box-shadow: 0px 0px 12px #266ed351;
-  margin-top: 80px;
+  box-shadow: 0px 8px 15px #00000031;
+  border-top: 3px solid var(--Accent-clr);
+  border-bottom: 3px solid var(--Accent-clr);
+  margin-top: 70px;
   border-radius: 30px;
 }
 
