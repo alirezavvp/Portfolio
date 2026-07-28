@@ -62,7 +62,7 @@ body.no-scroll {
 
 .container1 {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 header {
@@ -70,7 +70,6 @@ header {
   grid-template-columns: 0fr;
   text-wrap: nowrap;
   font-family: dana-medium;
-  margin: 30px auto 0;
   position: sticky;
   width: 75%;
   top: 0;
@@ -288,6 +287,11 @@ RESPONSIVE
     width: 100%;
   }
 
+  .container1 {
+    width: none;
+    margin: auto;
+  }
+
   nav > ul:first-child {
     display: none;
   }
@@ -310,11 +314,6 @@ RESPONSIVE
   #logo {
     font-size: 1.4em;
     padding: 0;
-  }
-
-  .container1 {
-    width: 40%;
-    margin: 0 auto;
   }
 
   #toggle-menu {
