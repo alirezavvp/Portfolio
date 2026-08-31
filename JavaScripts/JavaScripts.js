@@ -1,3 +1,5 @@
+const darkMode = document.querySelector("#dark-mode");
+
 // هنگام اسکرول کردن منوی اصلی تغییر ظاهر میدهد
 window.addEventListener("scroll", function () {
   const header = document.getElementById("main-header");
@@ -37,3 +39,9 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 elements.forEach((el) => observer.observe(el));
+
+darkMode.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  // const footer = document.getElementsByTagName("footer");
+  // footer.style.backgroundColor =
+});
