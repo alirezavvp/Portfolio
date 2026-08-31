@@ -16,8 +16,8 @@ document
   .addEventListener("click", function () {
     document.getElementById("mobile-menu").classList.toggle("show");
     document.getElementById("overlay").classList.toggle("show");
-    document.body.classList.add("menu-open");
-    document.body.classList.add("no-scroll");
+    document.body.classList.toggle("menu-open");
+    document.body.classList.toggle("no-scroll");
   });
 
 // بستن منو در موبایل
@@ -44,6 +44,4 @@ elements.forEach((el) => observer.observe(el));
 
 darkMode.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  // const footer = document.getElementsByTagName("footer");
-  // footer.style.backgroundColor =
 });
