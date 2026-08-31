@@ -449,6 +449,6 @@ RESPONSIVE
   }
 
   body.menu-open #site-content {
-    transform: translateX(-250px);
+    transform: translateX(-50px);
   }
 }
