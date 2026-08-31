@@ -16,6 +16,7 @@ document
   .addEventListener("click", function () {
     document.getElementById("mobile-menu").classList.toggle("show");
     document.getElementById("overlay").classList.toggle("show");
+    document.body.classList.add("menu-open");
     document.body.classList.add("no-scroll");
   });
 
@@ -25,6 +26,7 @@ document
   .addEventListener("click", function () {
     document.getElementById("mobile-menu").classList.remove("show");
     document.getElementById("overlay").classList.remove("show");
+    document.body.classList.remove("menu-open");
     document.body.classList.remove("no-scroll");
   });
 

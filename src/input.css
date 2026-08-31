@@ -367,7 +367,7 @@ RESPONSIVE
     flex-direction: column;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -70%;
     width: 70%;
     height: 100vh;
     gap: 60px;
@@ -375,20 +375,20 @@ RESPONSIVE
     background-color: var(--accent);
     color: var(--surface);
     padding: 60px 0;
-    z-index: 1000;
-    transition: right 0.5s ease-in-out;
+    z-index: 9999;
+    transition: right 0.5s ease-out;
   }
 
   #close-menu > svg {
     position: absolute;
     left: 0;
-    margin-left: 30px;
+    margin-left: 10px;
     fill: var(--bg);
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
     background-color: var(--primary);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     padding: 5px;
     border-radius: 999px;
   }
@@ -424,6 +424,7 @@ RESPONSIVE
 
     > a {
       color: var(--surface);
+      opacity: 0.7;
       text-decoration: none;
       padding: 12px 50px;
       transition: background-color 0.3s ease;
@@ -432,6 +433,7 @@ RESPONSIVE
 
   #sub-menu > a:hover {
     background-color: var(--primary);
+    opacity: 1;
   }
 
   .cta-info {
@@ -439,5 +441,17 @@ RESPONSIVE
     padding: 10px 0px;
     background-color: var(--accent);
     color: var(--surface);
+  }
+
+  #site-content {
+    transition: transform 0.5s ease-out;
+  }
+
+  body.menu-open #mobile-menu {
+    right: 0;
+  }
+
+  body.menu-open #site-content {
+    transform: translateX(-300px);
   }
 }
