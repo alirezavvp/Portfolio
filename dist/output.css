@@ -201,8 +201,8 @@
   .w-5\/10 {
     width: calc(5 / 10 * 100%);
   }
-  .w-10\/12 {
-    width: calc(10 / 12 * 100%);
+  .w-11\/12 {
+    width: calc(11 / 12 * 100%);
   }
   .w-19\/20 {
     width: calc(19 / 20 * 100%);
@@ -229,8 +229,8 @@
   .bg-amber-900 {
     background-color: var(--color-amber-900);
   }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
   }
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
@@ -434,7 +434,7 @@
   --accent: #6366f1;
   --border: #5b69ff;
 }
-.dark {
+body.dark {
   --bg: #020617;
   --surface: #0f172a;
   --primary: #f8fafc;
@@ -632,9 +632,10 @@ nav.scrolled > ul:hover {
   background-color: darkblue;
   left: 1%;
   bottom: 1%;
-  padding: 10px;
-  border: 2px solid var(--border);
+  padding: 6px;
+  border: 1px solid var(--border);
   border-radius: 12px;
+  opacity: 0.7;
   cursor: pointer;
 }
 @media (max-width: 1024px) {
@@ -666,6 +667,7 @@ nav.scrolled > ul:hover {
   }
   nav {
     height: 60px;
+    width: 100%;
     border-radius: 0;
   }
   nav.scrolled {
@@ -692,16 +694,27 @@ nav.scrolled > ul:hover {
     position: fixed;
     top: 0;
     right: 0;
-    width: 250px;
-    transform: translateX(100%);
+    width: 0;
     height: 100vh;
     gap: 60px;
-    border-left: 2px solid var(--border);
+    overflow-x: hidden;
+    text-wrap: nowrap;
     background-color: var(--accent);
     color: var(--surface);
     padding: 60px 0;
     z-index: 9999;
-    transition: all 0.5s ease-out;
+    transition: all 0.5s;
+  }
+  #mobile-menu.aside {
+    width: 210px;
+  }
+  #site-content {
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+  #site-content.margin {
+    text-wrap: nowrap;
+    margin-right: 210px;
   }
   #close-menu > svg {
     position: absolute;
@@ -737,12 +750,12 @@ nav.scrolled > ul:hover {
     flex-direction: column;
     list-style: disc;
     font-family: dana-extrabold;
-    font-size: 20px;
+    font-size: 17px;
     > a {
       color: var(--surface);
       opacity: 0.7;
       text-decoration: none;
-      padding: 12px 50px;
+      padding: 12px 30px;
       transition: background-color 0.3s ease;
     }
   }
@@ -756,14 +769,17 @@ nav.scrolled > ul:hover {
     background-color: var(--accent);
     color: var(--surface);
   }
-  #site-content {
-    transition: transform 0.5s ease-out;
+  .social-sidebar {
+    display: flex;
+    margin-top: 430px;
+    margin-right: 10px;
+    gap: 30px;
   }
-  body.menu-open #mobile-menu {
-    transform: translateX(0);
-  }
-  body.menu-open #site-content {
-    transform: translateX(-250px);
+  .social-icons-side {
+    fill: var(--surface);
+    opacity: 0.5;
+    width: 5px;
+    height: 10px;
   }
 }
 @property --tw-border-style {

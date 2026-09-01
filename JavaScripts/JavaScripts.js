@@ -1,4 +1,6 @@
 const darkMode = document.querySelector("#dark-mode");
+const mobileMenu = document.querySelector("#mobile-menu");
+const siteContent = document.querySelector("#site-content");
 
 // هنگام اسکرول کردن منوی اصلی تغییر ظاهر میدهد
 window.addEventListener("scroll", function () {
@@ -11,24 +13,22 @@ window.addEventListener("scroll", function () {
 });
 
 // باز کردن منو در موبایل و قفل شدن اسکرول و تاریک شدن
-document
-  .querySelector("#toggle-menu > svg")
-  .addEventListener("click", function () {
-    document.getElementById("mobile-menu").classList.toggle("show");
-    document.getElementById("overlay").classList.toggle("show");
-    document.body.classList.toggle("menu-open");
-    document.body.classList.toggle("no-scroll");
-  });
+document.querySelector("#toggle-menu > svg").addEventListener("click", () => {
+  mobileMenu.classList.toggle("aside");
+  document.getElementById("overlay").classList.toggle("show");
+  siteContent.classList.add("margin");
+  // siteContent.style.marginRight = "210px";
+  document.body.classList.toggle("no-scroll");
+});
 
 // بستن منو در موبایل
-document
-  .querySelector("#close-menu > svg")
-  .addEventListener("click", function () {
-    document.getElementById("mobile-menu").classList.remove("show");
-    document.getElementById("overlay").classList.remove("show");
-    document.body.classList.remove("menu-open");
-    document.body.classList.remove("no-scroll");
-  });
+document.querySelector("#close-menu > svg").addEventListener("click", () => {
+  mobileMenu.classList.remove("aside");
+  document.getElementById("overlay").classList.remove("show");
+  siteContent.classList.remove("margin");
+  // siteContent.style.marginRight = "0";
+  document.body.classList.remove("no-scroll");
+});
 
 // هنگام اسکرول کردن محتوا به شکل مخصوصی ظاهر میشود
 const elements = document.querySelectorAll(".reveal");

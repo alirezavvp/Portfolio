@@ -288,9 +288,10 @@ nav.scrolled > ul:hover {
   background-color: darkblue;
   left: 1%;
   bottom: 1%;
-  padding: 10px;
-  border: 2px solid var(--border);
+  padding: 6px;
+  border: 1px solid var(--border);
   border-radius: 12px;
+  opacity: 0.7;
   cursor: pointer;
 }
 
@@ -338,6 +339,7 @@ RESPONSIVE
 
   nav {
     height: 60px;
+    width: 100%;
     border-radius: 0;
   }
 
@@ -368,16 +370,30 @@ RESPONSIVE
     position: fixed;
     top: 0;
     right: 0;
-    width: 250px;
-    transform: translateX(100%);
+    width: 0;
     height: 100vh;
     gap: 60px;
-    border-left: 2px solid var(--border);
+    overflow-x: hidden;
+    text-wrap: nowrap;
     background-color: var(--accent);
     color: var(--surface);
     padding: 60px 0;
     z-index: 9999;
-    transition: all 0.5s ease-out;
+    transition: all 0.5s;
+  }
+
+  #mobile-menu.aside {
+    width: 210px;
+  }
+
+  #site-content {
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+
+  #site-content.margin {
+    text-wrap: nowrap;
+    margin-right: 210px;
   }
 
   #close-menu > svg {
@@ -417,13 +433,13 @@ RESPONSIVE
     flex-direction: column;
     list-style: disc;
     font-family: dana-extrabold;
-    font-size: 20px;
+    font-size: 17px;
 
     > a {
       color: var(--surface);
       opacity: 0.7;
       text-decoration: none;
-      padding: 12px 50px;
+      padding: 12px 30px;
       transition: background-color 0.3s ease;
     }
   }
@@ -440,15 +456,17 @@ RESPONSIVE
     color: var(--surface);
   }
 
-  #site-content {
-    transition: transform 0.5s ease-out;
+  .social-sidebar {
+    display: flex;
+    margin-top: 430px;
+    margin-right: 10px;
+    gap: 30px;
   }
 
-  body.menu-open #mobile-menu {
-    transform: translateX(0);
-  }
-
-  body.menu-open #site-content {
-    transform: translateX(-50px);
+  .social-icons-side {
+    fill: var(--surface);
+    opacity: 0.5;
+    width: 5px;
+    height: 10px;
   }
 }
