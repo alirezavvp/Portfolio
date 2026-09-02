@@ -66,6 +66,7 @@ body.dark {
 }
 
 body {
+  overflow-x: hidden;
   background-color: var(--bg);
   color: var(--primary);
   min-height: 120vh;
@@ -75,7 +76,7 @@ body {
 }
 
 body.no-scroll {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .container1 {
@@ -344,6 +345,9 @@ RESPONSIVE
   }
 
   nav.scrolled {
+    position: sticky;
+    top: 0;
+    left: 0;
     height: 50px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -365,35 +369,33 @@ RESPONSIVE
   }
 
   #mobile-menu {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 10px 1fr auto;
     position: fixed;
     top: 0;
     right: 0;
     width: 0;
-    height: 100vh;
-    gap: 60px;
-    overflow-x: hidden;
+    height: 100dvh;
+    gap: 30px;
+    overflow: hidden;
     text-wrap: nowrap;
     background-color: var(--accent);
     color: var(--surface);
-    padding: 60px 0;
+    padding: 20px 0;
     z-index: 9999;
     transition: all 0.5s;
+  }
+
+  #site-content {
+    transition: 0.5s;
   }
 
   #mobile-menu.aside {
     width: 210px;
   }
 
-  #site-content {
-    overflow: hidden;
-    transition: all 0.5s;
-  }
-
   #site-content.margin {
-    text-wrap: nowrap;
-    margin-right: 210px;
+    transform: translateX(-210px);
   }
 
   #close-menu > svg {
@@ -458,9 +460,9 @@ RESPONSIVE
 
   .social-sidebar {
     display: flex;
-    margin-top: 430px;
     margin-right: 10px;
     gap: 30px;
+    margin-bottom: 10px;
   }
 
   .social-icons-side {
@@ -468,5 +470,9 @@ RESPONSIVE
     opacity: 0.5;
     width: 5px;
     height: 10px;
+  }
+
+  body.no-scroll {
+    overflow-y: hidden;
   }
 }
