@@ -93,6 +93,8 @@ header {
   width: 75%;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   animation: slide-left 1.2s ease-out forwards;
 }
 
@@ -124,21 +126,15 @@ nav.scrolled {
   height: 60px;
 
   background: var(--surface);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(15px);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  > #logo,
-  ul {
-    opacity: 0.5;
-  }
+  opacity: 0.4;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-nav.scrolled > ul:hover {
+nav.scrolled:hover {
   opacity: 1;
 }
 
@@ -306,7 +302,7 @@ RESPONSIVE
 */
 @media (max-width: 1024px) {
   header {
-    width: 90%;
+    width: 75%;
   }
 
   nav > ul {
@@ -323,6 +319,8 @@ RESPONSIVE
   header {
     margin-top: 0;
     width: 100%;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
   }
 
   .container1 {
@@ -348,9 +346,12 @@ RESPONSIVE
     position: sticky;
     top: 0;
     left: 0;
-    height: 50px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    height: 45px;
+    background: var(--surface);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
   }
 
   #logo {
@@ -374,28 +375,22 @@ RESPONSIVE
     position: fixed;
     top: 0;
     right: 0;
-    width: 0;
+    width: 55%;
     height: 100dvh;
+    transform: translateX(100%);
     gap: 30px;
     overflow: hidden;
     text-wrap: nowrap;
     background-color: var(--accent);
+    border-left: 4px solid var(--border);
     color: var(--surface);
     padding: 20px 0;
     z-index: 9999;
     transition: all 0.5s;
   }
 
-  #site-content {
-    transition: 0.5s;
-  }
-
   #mobile-menu.aside {
-    width: 210px;
-  }
-
-  #site-content.margin {
-    transform: translateX(-210px);
+    transform: translateX(0);
   }
 
   #close-menu > svg {
@@ -403,8 +398,8 @@ RESPONSIVE
     left: 0;
     margin-left: 10px;
     fill: var(--bg);
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     background-color: var(--primary);
     border: 1px solid var(--border);
@@ -428,6 +423,7 @@ RESPONSIVE
   .overlay.show {
     opacity: 1;
     visibility: visible;
+    z-index: 9998;
   }
 
   #sub-menu {
